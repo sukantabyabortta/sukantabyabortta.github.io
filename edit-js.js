@@ -59,40 +59,52 @@ jQuery(function($) {
         });
     }).scroll();
 
-    // ===== GALLERY FUNCTIONALITY =====
+    // ===== GALLERY FUNCTIONALITY (OPTIMIZED) =====
+
+$(function () {
+
+    const $items = $('.gallery-item');
+    const $loadBtn = $('#loadMoreBtn');
+
     let visibleItems = 3;
     const itemsPerLoad = 3;
+    const totalItems = $items.length;
 
-    // Hide gallery items beyond first 3
-    $('.gallery-item').each(function(index) {
-        if (index >= visibleItems) {
-            $(this).hide();
-        }
-    });
+    // Initial hide
+    $items.slice(visibleItems).hide();
 
-    // Load More Button
-    $('#loadMoreBtn').click(function() {
-        const totalItems = $('.gallery-item').length;
+    // Load More
+    $loadBtn.on('click', function () {
+
         const nextVisible = visibleItems + itemsPerLoad;
 
-        $('.gallery-item').slice(visibleItems, nextVisible).fadeIn(500);
+        $items
+            .slice(visibleItems, nextVisible)
+            .stop(true, true)
+            .fadeIn(400);
+
         visibleItems = nextVisible;
 
         if (visibleItems >= totalItems) {
-            $(this).hide();
+            $loadBtn.fadeOut(300);
         }
-
-        setTimeout(checkScroll, 600);
     });
 
-    // Gallery hover effects
-    $('.gallery-item').hover(
-        function() {
-            $(this).find('.gallery-overlay').css('opacity', '1');
-        },
-        function() {
-            $(this).find('.gallery-overlay').css('opacity', '0');
-        }
-    );
+    // Hover overlay (smooth + no flicker)
+    $items.on('mouseenter', function () {
+        $(this).find('.gallery-overlay')
+               .stop(true)
+               .fadeIn(200);
+    });
+
+    $items.on('mouseleave', function () {
+        $(this).find('.gallery-overlay')
+               .stop(true)
+               .fadeOut(200);
+    });
 
 });
+
+
+});
+
