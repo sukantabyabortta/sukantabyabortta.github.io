@@ -59,21 +59,23 @@ jQuery(function($) {
         });
     }).scroll();
 
-    // ===== GALLERY FUNCTIONALITY (OPTIMIZED) =====
-
+   // ===== GALLERY FUNCTIONALITY (OPTIMIZED) =====
 $(function () {
 
     const $items = $('.gallery-item');
     const $loadBtn = $('#loadMoreBtn');
 
-    let visibleItems = 3;
     const itemsPerLoad = 3;
+    let visibleItems = 3;
     const totalItems = $items.length;
 
-    // Initial hide
-    $items.slice(visibleItems).hide();
+    // Hide everything first using jQuery only
+    $items.hide();
 
-    // Load More
+    // Show first set
+    $items.slice(0, visibleItems).fadeIn(300);
+
+    // Load more click
     $loadBtn.on('click', function () {
 
         const nextVisible = visibleItems + itemsPerLoad;
@@ -85,26 +87,30 @@ $(function () {
 
         visibleItems = nextVisible;
 
+        // Hide button when all shown
         if (visibleItems >= totalItems) {
-            $loadBtn.fadeOut(300);
+            $(this).fadeOut(300);
         }
     });
 
-    // Hover overlay (smooth + no flicker)
-    $items.on('mouseenter', function () {
-        $(this).find('.gallery-overlay')
-               .stop(true)
-               .fadeIn(200);
-    });
+    // Smooth overlay hover
+    $items.hover(
+        function () {
+            $(this).find('.gallery-overlay')
+                   .stop(true, true)
+                   .fadeIn(200);
+        },
+        function () {
+            $(this).find('.gallery-overlay')
+                   .stop(true, true)
+                   .fadeOut(200);
+        }
+    );
 
-    $items.on('mouseleave', function () {
-        $(this).find('.gallery-overlay')
-               .stop(true)
-               .fadeOut(200);
-    });
+});
+
+
 
 });
 
-
-});
 
