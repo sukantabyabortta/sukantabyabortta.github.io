@@ -359,34 +359,54 @@
     <script src="images/edit-js.js"></script>
     <script>
         // ===== ACTIVE NAVIGATION HIGHLIGHT (FIXED) =====
-        $(window).on('scroll', function() {
-            let scrollPos = $(window).scrollTop() + 100; // Reduced offset for better detection
-            let found = false;
+        $(document).ready(function () {
 
-            // Check sections in reverse order to prioritize lower sections
-            $('section').get().reverse().forEach(function(section) {
-                let $section = $(section);
-                let top = $section.offset().top - 150; // Add buffer for early activation
-                let id = $section.attr('id');
+    const offset = 120; // header height buffer
 
-                if (scrollPos >= top && !found) {
-                    $('.nav-menu a').removeClass('active');
-                    $('.nav-menu a[href="#' + id + '"]').addClass('active');
-                    found = true;
-                }
-            });
+    // ===== NAV CLICK (NO URL CHANGE) =====
+    $('.nav-menu a').on('click', function (e) {
+        e.preventDefault();
 
-            // Default to home if at top
-            if ($(window).scrollTop() < 100) {
+        let target = $(this).attr('href');
+        let $section = $(target);
+
+        if ($section.length) {
+            $('html, body').stop().animate({
+                scrollTop: $section.offset().top - offset
+            }, 500);
+        }
+
+        $('.nav-menu a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    // ===== SCROLL SPY ACTIVE MENU =====
+    $(window).on('scroll', function () {
+        let scrollPos = $(window).scrollTop() + offset;
+
+        $('section').each(function () {
+            let top = $(this).offset().top;
+            let bottom = top + $(this).outerHeight();
+            let id = $(this).attr('id');
+
+            if (scrollPos >= top && scrollPos < bottom) {
                 $('.nav-menu a').removeClass('active');
-                $('.nav-menu a[href="#home"]').addClass('active');
+                $('.nav-menu a[href="#' + id + '"]').addClass('active');
             }
         });
 
-        // Set initial active state
-        $(document).ready(function() {
+        // default home
+        if ($(window).scrollTop() < 100) {
+            $('.nav-menu a').removeClass('active');
             $('.nav-menu a[href="#home"]').addClass('active');
-        });
+        }
+    });
+
+    // ===== INITIAL ACTIVE =====
+    $('.nav-menu a[href="#home"]').addClass('active');
+
+});
+
 
         // ===== MOBILE NAVIGATION =====
         $('.hamburger').click(function() {
@@ -454,3 +474,4 @@
 
 
 </html>
+
