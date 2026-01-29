@@ -197,7 +197,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="gallery-item">
                     <div class="gallery-image">
                         <img src="images/03.png" alt="Project 3">
@@ -209,7 +208,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
             <div class="load-more-container">
                 <button id="loadMoreBtn" class="btn btn-primary">Load More Projects</button>
@@ -355,23 +353,75 @@
     </footer>
 
     <!-- JS -->
-    <script src="images/https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="images/https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="images/https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="images/edit-js.js"></script>
     <script>
-        $(function () {
-            $('.gallery-grid').smartGallery({
-                initial: 3,
-                perLoad: 3
+        // ===== ACTIVE NAVIGATION HIGHLIGHT (FIXED) =====
+        $(window).on('scroll', function() {
+            let scrollPos = $(window).scrollTop() + 100; // Reduced offset for better detection
+            let found = false;
+
+            // Check sections in reverse order to prioritize lower sections
+            $('section').get().reverse().forEach(function(section) {
+                let $section = $(section);
+                let top = $section.offset().top - 150; // Add buffer for early activation
+                let id = $section.attr('id');
+
+                if (scrollPos >= top && !found) {
+                    $('.nav-menu a').removeClass('active');
+                    $('.nav-menu a[href="#' + id + '"]').addClass('active');
+                    found = true;
+                }
             });
+
+            // Default to home if at top
+            if ($(window).scrollTop() < 100) {
+                $('.nav-menu a').removeClass('active');
+                $('.nav-menu a[href="#home"]').addClass('active');
+            }
+        });
+
+        // Set initial active state
+        $(document).ready(function() {
+            $('.nav-menu a[href="#home"]').addClass('active');
+        });
+
+        // ===== MOBILE NAVIGATION =====
+        $('.hamburger').click(function() {
+            $('.nav-menu').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+
+        $('.nav-link').click(function() {
+            $('.nav-menu').removeClass('active');
+            $('.hamburger').removeClass('active');
+        });
+
+        // ===== GALLERY FUNCTIONALITY (OPTIMIZED) =====
+        const $items = $('.gallery-item');
+        const $btn = $('#loadMoreBtn');
+
+        let visible = 3;
+        const perLoad = 3;
+
+        $items.hide().slice(0, visible).show();
+
+        $btn.on('click', function() {
+
+            const next = visible + perLoad;
+
+            $items.slice(visible, next).fadeIn(400);
+
+            visible = next;
+
+            if (visible >= $items.length) {
+                $btn.fadeOut();
+            }
         });
     </script>
 </body>
 
 
 </html>
-
-
-
-
-
