@@ -60,7 +60,7 @@ jQuery(function($) {
     }).scroll();
 
     // ===== GALLERY FUNCTIONALITY =====
-    let visibleItems = 7;
+    let visibleItems = 3;
     const itemsPerLoad = 3;
 
     // Hide gallery items beyond first 3
@@ -94,4 +94,5 @@ jQuery(function($) {
             $(this).find('.gallery-overlay').css('opacity', '0');
         }
     );
+
 });
