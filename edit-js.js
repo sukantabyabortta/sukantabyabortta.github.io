@@ -60,57 +60,79 @@ jQuery(function($) {
     }).scroll();
 
    // ===== GALLERY FUNCTIONALITY (OPTIMIZED) =====
-$(function () {
+(function ($) {
 
-    const $items = $('.gallery-item');
-    const $loadBtn = $('#loadMoreBtn');
+    $.fn.smartGallery = function (options) {
 
-    const itemsPerLoad = 3;
-    let visibleItems = 3;
-    const totalItems = $items.length;
+        const settings = $.extend({
+            item: '.gallery-item',
+            overlay: '.gallery-overlay',
+            loadBtn: '#loadMoreBtn',
+            initial: 3,
+            perLoad: 3,
+            speed: 400
+        }, options);
 
-    // Hide everything first using jQuery only
-    $items.hide();
+        return this.each(function () {
 
-    // Show first set
-    $items.slice(0, visibleItems).fadeIn(300);
+            const $gallery = $(this);
+            const $items = $gallery.find(settings.item);
+            const $loadBtn = $(settings.loadBtn);
 
-    // Load more click
-    $loadBtn.on('click', function () {
+            let visibleItems = settings.initial;
+            const totalItems = $items.length;
 
-        const nextVisible = visibleItems + itemsPerLoad;
+            // Hide all first (jQuery only)
+            $items.hide();
 
-        $items
-            .slice(visibleItems, nextVisible)
-            .stop(true, true)
-            .fadeIn(400);
+            // Show initial items
+            $items.slice(0, visibleItems).fadeIn(settings.speed);
 
-        visibleItems = nextVisible;
+            // Hide button if not needed
+            if (totalItems <= visibleItems) {
+                $loadBtn.hide();
+            }
 
-        // Hide button when all shown
-        if (visibleItems >= totalItems) {
-            $(this).fadeOut(300);
-        }
-    });
+            // Load more handler
+            $loadBtn.on('click', function () {
 
-    // Smooth overlay hover
-    $items.hover(
-        function () {
-            $(this).find('.gallery-overlay')
-                   .stop(true, true)
-                   .fadeIn(200);
-        },
-        function () {
-            $(this).find('.gallery-overlay')
-                   .stop(true, true)
-                   .fadeOut(200);
-        }
-    );
+                const nextVisible = visibleItems + settings.perLoad;
+
+                $items
+                    .slice(visibleItems, nextVisible)
+                    .stop(true, true)
+                    .fadeIn(settings.speed);
+
+                visibleItems = nextVisible;
+
+                if (visibleItems >= totalItems) {
+                    $(this).fadeOut(300);
+                }
+            });
+
+            // Smooth hover overlay
+            $items.hover(
+                function () {
+                    $(this).find(settings.overlay)
+                           .stop(true, true)
+                           .fadeIn(200);
+                },
+                function () {
+                    $(this).find(settings.overlay)
+                           .stop(true, true)
+                           .fadeOut(200);
+                }
+            );
+
+        });
+    };
 
 });
 
 
 
-});
+
+})(jQuery);
+
 
 
