@@ -34,5 +34,5 @@ jQuery(function($) {
     $(document).ready(checkScroll);
 
     // Add fade-in animation to elements
-    $('.skill-card, .gallery-item, .about-content, .contact-content').addClass('fade-in');
+    $('.skill-card, .gallery-item, .sketch-item, .about-content, .contact-content').addClass('fade-in');
 })(jQuery);

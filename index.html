@@ -47,7 +47,7 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Hi, I'm <span>Sukanta Byabortta</span></h1>
-                <h2>Creative UI Developer & Digital Craftsman</h2>
+                <h2>Creative UI Developer, Digital Craftsman & Character Sketch Artist</h2>
                 <p>Transforming ideas into stunning digital experiences with pixel-perfect precision and innovative design solutions. Specializing in responsive web development with 10+ years of passionate expertise.</p>
                 <div class="hero-buttons">
                     <a href="#portfolio" class="btn btn-primary">Explore My Work</a>
@@ -217,7 +217,68 @@
         </div>
     </section>
 
+    <!-- Sketch Character Drawing Gallery -->
+    <section id="sketches" class="sketches">
+        <div class="container">
+            <h2 class="section-title">Artistic Character Sketches</h2>
+            <p class="section-subtitle">Hand-drawn character illustrations and creative artwork</p>
+            <div class="sketch-grid">
+                <div class="sketch-item">
+                    <div class="sketch-image">
+                        <img src="images/02.png" alt="Character Sketch 1">
+                        <div class="sketch-overlay">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="sketch-item">
+                    <div class="sketch-image">
+                        <img src="images/03.png" alt="Character Sketch 2">
+                        <div class="sketch-overlay">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="sketch-item">
+                    <div class="sketch-image">
+                        <img src="images/02.png" alt="Character Sketch 3">
+                        <div class="sketch-overlay">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="sketch-item">
+                    <div class="sketch-image">
+                        <img src="images/01.png" alt="Character Sketch 4">
+                        <div class="sketch-overlay">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="sketch-item">
+                    <div class="sketch-image">
+                        <img src="images/02.png" alt="Character Sketch 5">
+                        <div class="sketch-overlay">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="load-more-container">
+                <button id="loadMoreSketchBtn" class="btn btn-primary">Load More Sketches</button>
+            </div>
+        </div>
+    </section>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <button class="lightbox-prev"><i class="fa fa-chevron-left"></i></button>
+            <img id="lightbox-image" src="" alt="">
+            <button class="lightbox-next"><i class="fa fa-chevron-right"></i></button>
+        </div>
+    </div>
 
     <!-- Portfolio Section -->
     <!-- <section id="portfolio" class="portfolio">
@@ -361,53 +422,53 @@
     <script src="images/edit-js.js"></script>
     <script>
         // ===== ACTIVE NAVIGATION HIGHLIGHT (FIXED) =====
-        $(document).ready(function () {
+        $(document).ready(function() {
 
-    const offset = 120; // header height buffer
+            const offset = 120; // header height buffer
 
-    // ===== NAV CLICK (NO URL CHANGE) =====
-    $('.nav-menu a').on('click', function (e) {
-        e.preventDefault();
+            // ===== NAV CLICK (NO URL CHANGE) =====
+            $('.nav-menu a').on('click', function(e) {
+                e.preventDefault();
 
-        let target = $(this).attr('href');
-        let $section = $(target);
+                let target = $(this).attr('href');
+                let $section = $(target);
 
-        if ($section.length) {
-            $('html, body').stop().animate({
-                scrollTop: $section.offset().top - offset
-            }, 500);
-        }
+                if ($section.length) {
+                    $('html, body').stop().animate({
+                        scrollTop: $section.offset().top - offset
+                    }, 500);
+                }
 
-        $('.nav-menu a').removeClass('active');
-        $(this).addClass('active');
-    });
-
-    // ===== SCROLL SPY ACTIVE MENU =====
-    $(window).on('scroll', function () {
-        let scrollPos = $(window).scrollTop() + offset;
-
-        $('section').each(function () {
-            let top = $(this).offset().top;
-            let bottom = top + $(this).outerHeight();
-            let id = $(this).attr('id');
-
-            if (scrollPos >= top && scrollPos < bottom) {
                 $('.nav-menu a').removeClass('active');
-                $('.nav-menu a[href="#' + id + '"]').addClass('active');
-            }
-        });
+                $(this).addClass('active');
+            });
 
-        // default home
-        if ($(window).scrollTop() < 100) {
-            $('.nav-menu a').removeClass('active');
+            // ===== SCROLL SPY ACTIVE MENU =====
+            $(window).on('scroll', function() {
+                let scrollPos = $(window).scrollTop() + offset;
+
+                $('section').each(function() {
+                    let top = $(this).offset().top;
+                    let bottom = top + $(this).outerHeight();
+                    let id = $(this).attr('id');
+
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        $('.nav-menu a').removeClass('active');
+                        $('.nav-menu a[href="#' + id + '"]').addClass('active');
+                    }
+                });
+
+                // default home
+                if ($(window).scrollTop() < 100) {
+                    $('.nav-menu a').removeClass('active');
+                    $('.nav-menu a[href="#home"]').addClass('active');
+                }
+            });
+
+            // ===== INITIAL ACTIVE =====
             $('.nav-menu a[href="#home"]').addClass('active');
-        }
-    });
 
-    // ===== INITIAL ACTIVE =====
-    $('.nav-menu a[href="#home"]').addClass('active');
-
-});
+        });
 
 
         // ===== MOBILE NAVIGATION =====
@@ -471,10 +532,81 @@
             });
 
         });
+
+        // ===== SKETCH GALLERY FUNCTIONALITY =====
+        const $sketchItems = $('.sketch-item');
+        const $sketchBtn = $('#loadMoreSketchBtn');
+
+        let sketchVisible = 3;
+        const sketchPerLoad = 3;
+
+        $sketchItems.hide().slice(0, sketchVisible).show();
+
+        $sketchBtn.on('click', function() {
+            const next = sketchVisible + sketchPerLoad;
+            $sketchItems.slice(sketchVisible, next).fadeIn(400);
+            sketchVisible = next;
+
+            if (sketchVisible >= $sketchItems.length) {
+                $sketchBtn.fadeOut();
+            }
+        });
+
+        // ===== SKETCH LIGHTBOX FUNCTIONALITY =====
+        let currentImageIndex = 0;
+        const sketchImages = $('.sketch-item img');
+
+        // Open lightbox
+        $('.sketch-item').click(function() {
+            currentImageIndex = $(this).index();
+            const imageSrc = $(this).find('img').attr('src');
+            $('#lightbox-image').attr('src', imageSrc);
+            $('#lightbox').fadeIn(300);
+        });
+
+        // Close lightbox
+        $('.lightbox-close, .lightbox').click(function(e) {
+            if (e.target === this) {
+                $('#lightbox').fadeOut(300);
+            }
+        });
+
+        // Previous image with slide effect
+        $('.lightbox-prev').click(function(e) {
+            e.stopPropagation();
+            $('#lightbox-image').css('transform', 'translateX(-100px)');
+            setTimeout(() => {
+                currentImageIndex = (currentImageIndex - 1 + sketchImages.length) % sketchImages.length;
+                const imageSrc = $(sketchImages[currentImageIndex]).attr('src');
+                $('#lightbox-image').attr('src', imageSrc).css('transform', 'translateX(0)');
+            }, 150);
+        });
+
+        // Next image with slide effect
+        $('.lightbox-next').click(function(e) {
+            e.stopPropagation();
+            $('#lightbox-image').css('transform', 'translateX(100px)');
+            setTimeout(() => {
+                currentImageIndex = (currentImageIndex + 1) % sketchImages.length;
+                const imageSrc = $(sketchImages[currentImageIndex]).attr('src');
+                $('#lightbox-image').attr('src', imageSrc).css('transform', 'translateX(0)');
+            }, 150);
+        });
+
+        // Keyboard navigation
+        $(document).keydown(function(e) {
+            if ($('#lightbox').is(':visible')) {
+                if (e.key === 'Escape') {
+                    $('#lightbox').fadeOut(300);
+                } else if (e.key === 'ArrowLeft') {
+                    $('.lightbox-prev').click();
+                } else if (e.key === 'ArrowRight') {
+                    $('.lightbox-next').click();
+                }
+            }
+        });
     </script>
 </body>
 
 
 </html>
-
-
