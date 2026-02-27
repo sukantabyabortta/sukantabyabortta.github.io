@@ -905,6 +905,12 @@ section {
     }
 }
 
+.contact {
+    background: #171729;
+    width: 100%;
+    float: left;
+}
+
 
 /* Responsive Design */
 
