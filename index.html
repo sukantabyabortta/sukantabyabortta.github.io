@@ -36,7 +36,7 @@
                 <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li>
-                    <a href="#" id="resumeBtn">
+                    <a href="#" class="resumeBtn">
                     <i class="fa fa-download"></i>
                     <span> Download Resume</span>
                 </a>
@@ -441,7 +441,7 @@
     </section>
 
     <!-- Fixed Resume Download Button -->
-    <a href="#" id="resumeBtn" class="resume-btn">
+    <a href="#" class="resumeBtn resume-btn">
         <i class="fa fa-download"></i>
         <span>Download My Resume</span>
     </a>
@@ -645,7 +645,7 @@
         });
 
         // ===== RESUME DOWNLOAD BUTTON =====
-        $('#resumeBtn').on('click', function(e) {
+        $('.resumeBtn').on('click', function(e) {
             e.preventDefault();
             const link = document.createElement('a');
             link.href = 'Sukanta_Byabortta_Resume.pdf';
