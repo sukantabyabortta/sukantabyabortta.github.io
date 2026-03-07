@@ -189,6 +189,10 @@ a {
     gap: 10px;
 }
 
+.logo-container a {
+    display: block;
+}
+
 .logo-icon {
     position: relative;
     width: 40px;
