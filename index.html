@@ -1,651 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.ico" type="images/x-icon">
-    <link rel="icon" type="images/png" sizes="32x32" href="images/favicon.png">
-    <title>Sukanta Byabortta - UI Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Sukanta Byabortta — Senior UI & React Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="logo-container">
-                    <a href="https://sukantabyabortta.github.io">
-                        <figure class="logo-icon">
-                            <span class="logo-s">S</span>
-                            <span class="logo-b">B</span>
-                        </figure>
-                        <span class="logo-text">Sukanta</span>
-                    </a>
-                </div>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#home" class="nav-brand">
+            <span class="brand-box">SB</span>
+            <span class="brand-name">Sukanta</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nl active">Home</a></li>
+            <li><a href="#about" class="nl">About</a></li>
+            <li><a href="#services" class="nl">Services</a></li>
+            <li><a href="#skills" class="nl">Skills</a></li>
+            <li><a href="#portfolio" class="nl">Portfolio</a></li>
+            <li><a href="#contact" class="nl">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<section id="home" class="hero">
+    <div class="hero-wrap">
+        <div class="hero-text">
+            <span class="hero-badge"><i class="fa-solid fa-circle-check"></i> Available for Freelance</span>
+            <h1>Hi, I'm <span class="accent">Sukanta Byabortta</span></h1>
+            <h2>Senior UI Developer <span class="divider">|</span> React.js Developer</h2>
+            <p>10+ years crafting pixel-perfect, responsive web interfaces. I build fast, clean, and scalable frontends — from pure HTML/CSS UI to modern React.js applications. Trusted by clients on Upwork and freelance platforms worldwide.</p>
+            <div class="hero-tags">
+                <span><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                <span><i class="fa-brands fa-react"></i> React.js</span>
+                <span><i class="fa-solid fa-wind"></i> Tailwind CSS</span>
+                <span><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+                <span><i class="fa-brands fa-js"></i> jQuery</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <!-- <li>
-                    <a href="#" class="resumeBtn">
-                        <i class="fa fa-download"></i>
-                        <span> Download Resume</span>
-                    </a>
-                </li> -->
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn-outline">Hire Me</a>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Hi, I'm <span>Sukanta Byabortta</span></h1>
-                <h2>Senior UI Developer with 10+ Years Experience | Modern React.js Development</h2>
-                <p>
-                    With 10+ years of experience as a UI Developer, I specialize in crafting responsive, user-friendly, and pixel-perfect web interfaces using modern HTML, CSS, and JavaScript.
-                </p>
-                <p>
-                    Alongside my strong UI foundation, I have expanded my expertise into React.js development, building component-based, scalable, and performance-focused web applications.
-                </p>
-                <p>
-                    I combine deep UI experience with modern React practices to deliver clean, maintainable, and production-ready solutions.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary">Explore My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Collaborate</a>
-                </div>
+        <div class="hero-img">
+            <div class="img-ring">
+                <img src="images/myImg.png" alt="Sukanta Byabortta">
             </div>
-            <div class="hero-image">
-                <div class="profile-circle">
-                    <img src="images/myImg.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Passionate Developer, Creative Problem Solver</h3>
-                    <p>I'm a dedicated UI Developer with over a decade of experience crafting exceptional digital experiences. My journey began with a simple curiosity about how websites work, and it has evolved into a passionate career of creating intuitive,
-                        beautiful, and highly functional web interfaces.</p>
-                    <p>I believe in the power of clean code, thoughtful design, and user-centered development. Every project is an opportunity to push boundaries and create something remarkable that not only looks great but performs flawlessly across all
-                        devices.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>10+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat">
-                            <h3>150+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat">
-                            <h3>75+</h3>
-                            <p>Happy Clients</p>
-                        </div>
-                        <div class="stat">
-                            <h3>24/7</h3>
-                            <p>Support Available</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-info">
-                    <h4>Get In Touch</h4>
-                    <div class="info-item">
-                        <i class="fa fa-user"></i>
-                        <span>Sukanta Byabortta</span>
-                    </div>
-
-                    <div class="info-item">
-                        <i class="fa fa-map-marker"></i>
-                        <span>West Bengal, India</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa fa-clock-o"></i>
-                        <span>Available for Freelance</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">My Expertise</h2>
-            <p class="section-subtitle">Mastering the art of modern web development with cutting-edge technologies</p>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fa fa-html5"></i>
-                    <h3>HTML5</h3>
-                    <p>Semantic markup, accessibility standards, and modern HTML5 features for robust web foundations</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa fa-css3"></i>
-                    <h3>CSS3</h3>
-                    <p>Advanced styling, animations, flexbox, grid layouts, and responsive design principles</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa fa-code"></i>
-                    <h3>Tailwind CSS</h3>
-                    <p>Utility-first framework for rapid UI development and consistent design systems</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa fa-bootstrap"></i>
-                    <h3>Bootstrap</h3>
-                    <p>Responsive grid systems, component libraries, and mobile-first development approach</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa fa-js"></i>
-                    <h3>jQuery</h3>
-                    <p>Interactive functionality, DOM manipulation, and seamless user experience enhancement</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa fa-react"></i>
-                    <h3>React.js</h3>
-                    <p>Component-based architecture, hooks, state management, and building dynamic single-page applications</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa fa-magic"></i>
-                    <h3>Web Animations</h3>
-                    <p>CSS animations, transitions, and JavaScript-powered interactive experiences</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">My Work Gallery</h2>
-            <p class="section-subtitle">Explore my recent projects and creative solutions</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/06.png" alt="Spice Garden">
-                        <div class="gallery-overlay">
-                            <a href="https://sukantabyabortta.github.io/spice-garden/" class="gallery-link" target="_blank">
-                                <i class="fa fa-external-link"></i>
-                                <span>View React Project</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/04.png" alt="SR Appliance">
-                        <div class="gallery-overlay">
-                            <a href="https://sukantabyabortta.github.io/my-app/" class="gallery-link" target="_blank">
-                                <i class="fa fa-external-link"></i>
-                                <span>View React Project</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/04.png" alt="SR Appliance">
-                        <div class="gallery-overlay">
-                            <a href="https://sukantabyabortta.github.io/sr_appliance/" class="gallery-link" target="_blank">
-                                <i class="fa fa-external-link"></i>
-                                <span>View HTML Project</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/05.png" alt="SP College">
-                        <div class="gallery-overlay">
-                            <a href="https://sukantabyabortta.github.io/sp-college/" class="gallery-link" target="_blank">
-                                <i class="fa fa-external-link"></i>
-                                <span>View HTML Project</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/07.png" alt="Project 3">
-                        <div class="gallery-overlay">
-                            <a href="https://sukantabyabortta.github.io/cards-never-lie/" class="gallery-link" target="_blank">
-                                <i class="fa fa-external-link"></i>
-                                <span>View HTML Project</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="images/08.png" alt="Project 3">
-                        <div class="gallery-overlay">
-                            <a href="https://sukantabyabortta.github.io/sr-textiles/" class="gallery-link" target="_blank">
-                                <i class="fa fa-external-link"></i>
-                                <span>View HTML Project</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="load-more-container">
-                <button id="loadMoreBtn" class="btn btn-primary">Load More Projects</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sketch Character Drawing Gallery -->
-    <!-- <section id="sketches" class="sketches">
-        <div class="container">
-            <h2 class="section-title">Artistic Character Sketches</h2>
-            <p class="section-subtitle">Hand-drawn character illustrations and creative artwork</p>
-            <div class="sketch-grid">
-                <div class="sketch-item">
-                    <div class="sketch-image">
-                        <img src="images/sketch1.jpeg" alt="Character Sketch 1">
-                        <div class="sketch-overlay">
-                            <i class="fa fa-search-plus"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="sketch-item">
-                    <div class="sketch-image">
-                        <img src="images/sketch2.jpeg" alt="Character Sketch 2">
-                        <div class="sketch-overlay">
-                            <i class="fa fa-search-plus"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="sketch-item">
-                    <div class="sketch-image">
-                        <img src="images/sketch3.jpeg" alt="Character Sketch 3">
-                        <div class="sketch-overlay">
-                            <i class="fa fa-search-plus"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="sketch-item">
-                    <div class="sketch-image">
-                        <img src="images/sketch4.jpeg" alt="Character Sketch 4">
-                        <div class="sketch-overlay">
-                            <i class="fa fa-search-plus"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="sketch-item">
-                    <div class="sketch-image">
-                        <img src="images/sketch5.jpeg" alt="Character Sketch 5">
-                        <div class="sketch-overlay">
-                            <i class="fa fa-search-plus"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="load-more-container">
-                <button id="loadMoreSketchBtn" class="btn btn-primary">Load More Sketches</button>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close">&times;</span>
-            <button class="lightbox-prev"><i class="fa fa-chevron-left"></i></button>
-            <img id="lightbox-image" src="" alt="">
-            <button class="lightbox-next"><i class="fa fa-chevron-right"></i></button>
+            <div class="exp-badge"><strong>10+</strong><span>Years Exp.</span></div>
         </div>
     </div>
+</section>
 
-    <!-- Portfolio Section -->
-    <!-- <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">A showcase of my recent work and creative solutions</p>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-img">E-Commerce</div>
-                        <div class="portfolio-overlay">
-                            <h3>Modern E-commerce Platform</h3>
-                            <p>Full-featured online store with responsive design, shopping cart, and payment integration</p>
-                            <a href="#" class="portfolio-link"><i class="fa fa-external-link"></i></a>
-                        </div>
-                    </div>
+<section id="about" class="about">
+    <div class="container">
+        <div class="sec-head">
+            <span class="sec-label">Who I Am</span>
+            <h2 class="sec-title">About Me</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-left">
+                <h3>Senior Frontend Developer with 10+ Years of Real-World Experience</h3>
+                <p>I'm a dedicated UI Developer based in West Bengal, India. Over the past decade I've worked with startups, agencies, and direct clients — delivering clean, responsive, and high-performance web interfaces that convert visitors into customers.</p>
+                <p>Recently I've expanded into <strong>React.js development</strong>, building component-based, scalable SPAs. I combine deep UI expertise with modern React practices to deliver production-ready solutions that clients love.</p>
+                <div class="skill-tags">
+                    <span class="tag t1">HTML5</span>
+                    <span class="tag t2">CSS3</span>
+                    <span class="tag t3">React.js</span>
+                    <span class="tag t4">Tailwind CSS</span>
+                    <span class="tag t5">Bootstrap</span>
+                    <span class="tag t6">JavaScript</span>
+                    <span class="tag t7">jQuery</span>
+                    <span class="tag t8">Responsive Design</span>
+                    <span class="tag t9">UI/UX</span>
+                    <span class="tag t10">Git</span>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-img">Corporate</div>
-                        <div class="portfolio-overlay">
-                            <h3>Corporate Business Website</h3>
-                            <p>Professional multi-page website with CMS integration and SEO optimization</p>
-                            <a href="#" class="portfolio-link"><i class="fa fa-external-link"></i></a>
-                        </div>
-                    </div>
+                <div class="about-stats">
+                    <div class="stat-box"><strong>10+</strong><span>Years Experience</span></div>
+                    <div class="stat-box"><strong>150+</strong><span>Projects Done</span></div>
+                    <div class="stat-box"><strong>75+</strong><span>Happy Clients</span></div>
+                    <div class="stat-box"><strong>24/7</strong><span>Support</span></div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-img">Landing</div>
-                        <div class="portfolio-overlay">
-                            <h3>High-Converting Landing Page</h3>
-                            <p>Product showcase with advanced animations and conversion-focused design</p>
-                            <a href="#" class="portfolio-link"><i class="fa fa-external-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-img">Dashboard</div>
-                        <div class="portfolio-overlay">
-                            <h3>Analytics Dashboard</h3>
-                            <p>Data visualization interface with interactive charts and real-time updates</p>
-                            <a href="#" class="portfolio-link"><i class="fa fa-external-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-img">Mobile App</div>
-                        <div class="portfolio-overlay">
-                            <h3>Mobile-First Web App</h3>
-                            <p>Progressive web application with offline capabilities and native app feel</p>
-                            <a href="#" class="portfolio-link"><i class="fa fa-external-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="placeholder-img">Portfolio</div>
-                        <div class="portfolio-overlay">
-                            <h3>Creative Portfolio Site</h3>
-                            <p>Artist portfolio with stunning animations and immersive user experience</p>
-                            <a href="#" class="portfolio-link"><i class="fa fa-external-link"></i></a>
-                        </div>
+            </div>
+            <div class="about-right">
+                <div class="info-card">
+                    <h4><i class="fa-solid fa-id-card"></i> Quick Info</h4>
+                    <ul class="info-list">
+                        <li><i class="fa-solid fa-user"></i><span>Sukanta Byabortta</span></li>
+                        <li><i class="fa-solid fa-location-dot"></i><span>West Bengal, India</span></li>
+                        <li><i class="fa-solid fa-briefcase"></i><span>10+ Years Experience</span></li>
+                        <li><i class="fa-solid fa-circle-check"></i><span>Available for Freelance</span></li>
+                        <li><i class="fa-solid fa-code"></i><span>UI Developer + React Developer</span></li>
+                        <li><i class="fa-solid fa-clock"></i><span>Response within 24 hours</span></li>
+                    </ul>
+                    <div class="what-i-do">
+                        <h5>What I Offer Clients</h5>
+                        <p><i class="fa-solid fa-check"></i> Pixel-perfect HTML/CSS from Figma/PSD</p>
+                        <p><i class="fa-solid fa-check"></i> React.js SPA development</p>
+                        <p><i class="fa-solid fa-check"></i> Responsive &amp; mobile-first design</p>
+                        <p><i class="fa-solid fa-check"></i> UI bug fixing &amp; optimization</p>
+                        <p><i class="fa-solid fa-check"></i> Template customization</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Create Something Amazing</h2>
-            <p class="section-subtitle">Ready to bring your vision to life? Let's discuss your next project</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Ready to Start Your Project?</h3>
-                    <p>I'm passionate about creating exceptional digital experiences that drive results. Whether you need a stunning website, a complex web application, or just want to discuss your ideas, I'm here to help turn your vision into reality.</p>
-                    <div class="contact-highlights">
-                        <div class="highlight-item">
-                            <i class="fa fa-rocket"></i>
-                            <span>Fast Turnaround</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa fa-mobile"></i>
-                            <span>Mobile-First Design</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa fa-code"></i>
-                            <span>Clean Code</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa fa-support"></i>
-                            <span>Ongoing Support</span>
-                        </div>
-                    </div>
-                    <div class="contact-details">
-
-                        <div class="contact-item">
-                            <i class="fa fa-map-marker"></i>
-                            <span>West Bengal, India</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa fa-clock-o"></i>
-                            <span>Response within 24 hours</span>
-                        </div>
-                    </div>
-                </div>
-
+<section id="services" class="services">
+    <div class="container">
+        <div class="sec-head">
+            <span class="sec-label">What I Do</span>
+            <h2 class="sec-title">My Services</h2>
+            <p class="sec-sub">Professional frontend development services tailored for freelance clients on Upwork and beyond</p>
+        </div>
+        <div class="services-grid">
+            <div class="srv-card">
+                <div class="srv-icon si-react"><i class="fa-brands fa-react"></i></div>
+                <h3>React.js Development</h3>
+                <p>Component-based SPAs, hooks, state management, API integration. Fast, scalable, and production-ready React applications.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> React Hooks &amp; Context API</li>
+                    <li><i class="fa-solid fa-check"></i> REST API Integration</li>
+                    <li><i class="fa-solid fa-check"></i> Reusable Components</li>
+                </ul>
+            </div>
+            <div class="srv-card featured">
+                <div class="srv-badge">Most Popular</div>
+                <div class="srv-icon si-html"><i class="fa-brands fa-html5"></i></div>
+                <h3>HTML/CSS UI Development</h3>
+                <p>Pixel-perfect conversion from Figma, PSD, or XD designs to clean, semantic, cross-browser HTML &amp; CSS.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Figma / PSD to HTML</li>
+                    <li><i class="fa-solid fa-check"></i> Semantic HTML5</li>
+                    <li><i class="fa-solid fa-check"></i> Cross-browser Compatible</li>
+                </ul>
+            </div>
+            <div class="srv-card">
+                <div class="srv-icon si-mob"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>Responsive Design &amp; Fix</h3>
+                <p>Make any website fully responsive across all devices — desktop, tablet, and mobile down to 375px.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Mobile-first Approach</li>
+                    <li><i class="fa-solid fa-check"></i> Flexbox &amp; CSS Grid</li>
+                    <li><i class="fa-solid fa-check"></i> All Screen Sizes</li>
+                </ul>
+            </div>
+            <div class="srv-card">
+                <div class="srv-icon si-tmpl"><i class="fa-solid fa-sliders"></i></div>
+                <h3>Template Customization</h3>
+                <p>Customize any HTML, Bootstrap, or React template to match your brand identity and business requirements.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Bootstrap Templates</li>
+                    <li><i class="fa-solid fa-check"></i> Theme Customization</li>
+                    <li><i class="fa-solid fa-check"></i> Brand Integration</li>
+                </ul>
+            </div>
+            <div class="srv-card">
+                <div class="srv-icon si-bug"><i class="fa-solid fa-bug-slash"></i></div>
+                <h3>UI Bug Fixing</h3>
+                <p>Fast diagnosis and fixing of CSS layout issues, JavaScript bugs, responsive breakpoints, and cross-browser problems.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> CSS Layout Fixes</li>
+                    <li><i class="fa-solid fa-check"></i> JS/jQuery Debugging</li>
+                    <li><i class="fa-solid fa-check"></i> Browser Compatibility</li>
+                </ul>
+            </div>
+            <div class="srv-card">
+                <div class="srv-icon si-anim"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Animations &amp; Interactions</h3>
+                <p>Smooth CSS animations, hover effects, scroll transitions, and jQuery-powered interactive UI components.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> CSS Animations</li>
+                    <li><i class="fa-solid fa-check"></i> Scroll Effects</li>
+                    <li><i class="fa-solid fa-check"></i> Interactive UI</li>
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Fixed Resume Download Button -->
-    <!-- <a href="#" class="resumeBtn resume-btn">
-        <i class="fa fa-download"></i>
-        <span>Download My Resume</span>
-    </a> -->
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Sukanta Byabortta. Crafted with <i class="fa fa-heart" style="color: #64ffda;"></i> in West Bengal, India. All rights reserved.</p>
+<section id="skills" class="skills">
+    <div class="container">
+        <div class="sec-head">
+            <span class="sec-label">My Expertise</span>
+            <h2 class="sec-title">Technical Skills</h2>
+            <p class="sec-sub">10+ years of hands-on experience with modern frontend technologies</p>
         </div>
-    </footer>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="sk-icon sk-html"><i class="fa-brands fa-html5"></i></div>
+                <h3>HTML5</h3>
+                <p>Semantic markup, accessibility, SEO-friendly structure and modern HTML5 APIs</p>
+                <div class="sk-bar"><div class="sk-fill" data-w="100"></div></div>
+                <span class="sk-pct">Expert — 100%</span>
+            </div>
+            <div class="skill-card">
+                <div class="sk-icon sk-css"><i class="fa-brands fa-css3-alt"></i></div>
+                <h3>CSS3</h3>
+                <p>Flexbox, Grid, animations, transitions, custom properties and responsive design</p>
+                <div class="sk-bar"><div class="sk-fill" data-w="100"></div></div>
+                <span class="sk-pct">Expert — 100%</span>
+            </div>
+            <div class="skill-card">
+                <div class="sk-icon sk-react"><i class="fa-brands fa-react"></i></div>
+                <h3>React.js</h3>
+                <p>Hooks, Context API, component architecture, state management and SPA development</p>
+                <div class="sk-bar"><div class="sk-fill" data-w="82"></div></div>
+                <span class="sk-pct">Advanced — 82%</span>
+            </div>
+            <div class="skill-card">
+                <div class="sk-icon sk-js"><i class="fa-brands fa-js"></i></div>
+                <h3>JavaScript</h3>
+                <p>ES6+, DOM manipulation, async/await, event handling and interactive UI logic</p>
+                <div class="sk-bar"><div class="sk-fill" data-w="88"></div></div>
+                <span class="sk-pct">Advanced — 88%</span>
+            </div>
+            <div class="skill-card">
+                <div class="sk-icon sk-bs"><i class="fa-brands fa-bootstrap"></i></div>
+                <h3>Bootstrap</h3>
+                <p>Responsive grid, components, utilities and mobile-first development approach</p>
+                <div class="sk-bar"><div class="sk-fill" data-w="100"></div></div>
+                <span class="sk-pct">Expert — 100%</span>
+            </div>
+            <div class="skill-card">
+                <div class="sk-icon sk-tw"><i class="fa-solid fa-wind"></i></div>
+                <h3>Tailwind CSS</h3>
+                <p>Utility-first styling, rapid UI development and consistent design systems</p>
+                <div class="sk-bar"><div class="sk-fill" data-w="100"></div></div>
+                <span class="sk-pct">Advanced — 100%</span>
+            </div>
+            <div class="skill-card">
+                <div class="sk-icon sk-jq"><i class="fa-solid fa-code"></i></div>
+                <h3>jQuery</h3>
+                <p>DOM manipulation, AJAX, animations, plugins and interactive UI enhancement</p>
+                <div class="sk-bar"><div class="sk-fill" data-w="100"></div></div>
+                <span class="sk-pct">Expert — 100%</span>
+            </div>
+            <div class="skill-card">
+                <div class="sk-icon sk-git"><i class="fa-brands fa-git-alt"></i></div>
+                <h3>Git &amp; GitHub</h3>
+                <p>Version control, branching, pull requests and collaborative development workflow</p>
+                <div class="sk-bar"><div class="sk-fill" data-w="90"></div></div>
+                <span class="sk-pct">Proficient — 90%</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- JS -->
-    <!-- <script src="images/https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="images/https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="images/edit-js.js"></script>
-    <script>
-        // ===== ACTIVE NAVIGATION HIGHLIGHT (FIXED) =====
-        $(document).ready(function() {
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="sec-head">
+            <span class="sec-label">My Work</span>
+            <h2 class="sec-title">Work Gallery</h2>
+            <p class="sec-sub">Real projects delivered for real clients — click any project to view live</p>
+        </div>
 
-            const offset = 120; // header height buffer
+        <div class="gallery-row react-row">
+            <div class="row-label">
+                <div class="row-label-left">
+                    <span class="row-badge rbadge-react"><i class="fa-brands fa-react"></i> React.js Projects</span>
+                    <p>Modern single-page applications built with React.js</p>
+                </div>
+                <span class="row-count">2 Projects</span>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gc-img">
+                        <img src="images/06.png" alt="Spice Garden React App">
+                        <div class="gc-overlay">
+                            <a href="https://sukantabyabortta.github.io/spice-garden/" target="_blank" rel="noopener noreferrer" class="gc-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
+                        </div>
+                        <span class="gc-tech react-tech"><i class="fa-brands fa-react"></i> React</span>
+                    </div>
+                    <div class="gc-info">
+                        <h4>Spice Garden</h4>
+                        <p>Restaurant UI app — interactive menu browsing and ordering experience built with React.js components and dynamic state management.</p>
+                        <div class="gc-tags"><span>React.js</span><span>CSS3</span><span>SPA</span></div>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gc-img">
+                        <img src="images/04.png" alt="SR Appliance React App">
+                        <div class="gc-overlay">
+                            <a href="https://sukantabyabortta.github.io/my-app/" target="_blank" rel="noopener noreferrer" class="gc-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
+                        </div>
+                        <span class="gc-tech react-tech"><i class="fa-brands fa-react"></i> React</span>
+                    </div>
+                    <div class="gc-info">
+                        <h4>SR Appliance — React App</h4>
+                        <p>Home appliance repair service app — service listing, booking flow and dynamic UI built with React + Vite for fast performance.</p>
+                        <div class="gc-tags"><span>React.js</span><span>Vite</span><span>Responsive</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            // ===== NAV CLICK (NO URL CHANGE) =====
-            $('.nav-menu a').on('click', function(e) {
-                e.preventDefault();
+        <div class="gallery-row html-row">
+            <div class="row-label">
+                <div class="row-label-left">
+                    <span class="row-badge rbadge-html"><i class="fa-brands fa-html5"></i> HTML/CSS UI Projects</span>
+                    <p>Pixel-perfect multi-page websites built with HTML5, CSS3, Bootstrap &amp; jQuery</p>
+                </div>
+                <span class="row-count">4 Projects</span>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="gc-img">
+                        <img src="images/04.png" alt="SR Appliance Care HTML">
+                        <div class="gc-overlay">
+                            <a href="https://sukantabyabortta.github.io/sr_appliance/" target="_blank" rel="noopener noreferrer" class="gc-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
+                        </div>
+                        <span class="gc-tech html-tech"><i class="fa-brands fa-html5"></i> HTML</span>
+                    </div>
+                    <div class="gc-info">
+                        <h4>SR Appliance Care</h4>
+                        <p>Full multi-page appliance repair business site — AC, washing machine, refrigerator repair services with FAQ, reviews and contact form.</p>
+                        <div class="gc-tags"><span>HTML5</span><span>CSS3</span><span>Bootstrap</span><span>jQuery</span></div>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gc-img">
+                        <img src="images/05.png" alt="SP College">
+                        <div class="gc-overlay">
+                            <a href="https://sukantabyabortta.github.io/sp-college/" target="_blank" rel="noopener noreferrer" class="gc-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
+                        </div>
+                        <span class="gc-tech html-tech"><i class="fa-brands fa-html5"></i> HTML</span>
+                    </div>
+                    <div class="gc-info">
+                        <h4>SP College</h4>
+                        <p>Complete college website — admissions portal, academics, faculty profiles, news ticker, events and multi-level navigation.</p>
+                        <div class="gc-tags"><span>HTML5</span><span>CSS3</span><span>Bootstrap</span><span>jQuery</span></div>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gc-img">
+                        <img src="images/07.png" alt="Cards Never Lie">
+                        <div class="gc-overlay">
+                            <a href="https://sukantabyabortta.github.io/cards-never-lie/" target="_blank" rel="noopener noreferrer" class="gc-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
+                        </div>
+                        <span class="gc-tech html-tech"><i class="fa-brands fa-html5"></i> HTML</span>
+                    </div>
+                    <div class="gc-info">
+                        <h4>Cards Never Lie (TAR)</h4>
+                        <p>Spiritual tarot card reading platform — mystical card interpretation, soul mentorship and premium membership community site.</p>
+                        <div class="gc-tags"><span>HTML5</span><span>CSS3</span><span>AOS</span><span>jQuery</span></div>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <div class="gc-img">
+                        <img src="images/08.png" alt="SR Textiles">
+                        <div class="gc-overlay">
+                            <a href="https://sukantabyabortta.github.io/sr-textiles/" target="_blank" rel="noopener noreferrer" class="gc-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Preview</a>
+                        </div>
+                        <span class="gc-tech html-tech"><i class="fa-brands fa-html5"></i> HTML</span>
+                    </div>
+                    <div class="gc-info">
+                        <h4>SR Textiles</h4>
+                        <p>Premium textile manufacturing company site — fabric catalog, export services, product gallery and manufacturing process showcase.</p>
+                        <div class="gc-tags"><span>HTML5</span><span>CSS3</span><span>Bootstrap</span><span>jQuery</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                let target = $(this).attr('href');
-                let $section = $(target);
+    </div>
+</section>
 
-                if ($section.length) {
-                    $('html, body').stop().animate({
-                        scrollTop: $section.offset().top - offset
-                    }, 500);
-                }
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="sec-head">
+            <span class="sec-label">Get In Touch</span>
+            <h2 class="sec-title">Let's Work Together</h2>
+            <p class="sec-sub">Have a project in mind? I'm available for freelance work right now</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-left">
+                <h3>Ready to Start Your Project?</h3>
+                <p>I bring 10+ years of frontend expertise to every project. Whether you need a full website, a React app, a responsive fix, or UI bug fixes — I deliver clean, fast, and professional results.</p>
+                <div class="contact-highlights">
+                    <div class="ch-item">
+                        <div class="ch-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div><strong>Fast Delivery</strong><span>Quick turnaround without compromising quality</span></div>
+                    </div>
+                    <div class="ch-item">
+                        <div class="ch-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <div><strong>Mobile-First</strong><span>Fully responsive on all devices</span></div>
+                    </div>
+                    <div class="ch-item">
+                        <div class="ch-icon"><i class="fa-solid fa-code"></i></div>
+                        <div><strong>Clean Code</strong><span>Readable, maintainable, production-ready</span></div>
+                    </div>
+                    <div class="ch-item">
+                        <div class="ch-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div><strong>24/7 Support</strong><span>Always available for revisions &amp; support</span></div>
+                    </div>
+                </div>
+                <div class="contact-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> West Bengal, India</span>
+                    <span><i class="fa-solid fa-clock"></i> Response within 24 hours</span>
+                    <span><i class="fa-solid fa-circle-check"></i> Available for Freelance</span>
+                </div>
+            </div>
+            <div class="contact-right">
+                <div class="hire-box">
+                    <div class="hire-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h4>Let's Build Something Great</h4>
+                    <p>10+ years experienced Senior UI Developer &amp; React Frontend Developer. Available for short and long-term freelance projects.</p>
+                    <div class="hire-skills">
+                        <span>HTML/CSS</span><span>React.js</span><span>Bootstrap</span><span>jQuery</span><span>Responsive</span><span>UI Bug Fix</span>
+                    </div>
+                    <div class="hire-stats">
+                        <div><strong>10+</strong><small>Years Exp.</small></div>
+                        <div><strong>150+</strong><small>Projects</small></div>
+                        <div><strong>75+</strong><small>Clients</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                $('.nav-menu a').removeClass('active');
-                $(this).addClass('active');
-            });
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-box">SB</span>
+                <div>
+                    <strong>Sukanta Byabortta</strong>
+                    <span>Senior UI Developer &amp; React.js Developer</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#skills">Skills</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-copy">© 2025 Sukanta Byabortta. All rights reserved. | West Bengal, India</p>
+        </div>
+    </div>
+</footer>
 
-            // ===== SCROLL SPY ACTIVE MENU =====
-            $(window).on('scroll', function() {
-                let scrollPos = $(window).scrollTop() + offset;
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+$(function () {
+    var offset = 70;
 
-                $('section').each(function() {
-                    let top = $(this).offset().top;
-                    let bottom = top + $(this).outerHeight();
-                    let id = $(this).attr('id');
+    $(window).on('scroll', function () {
+        $('#navbar').toggleClass('scrolled', $(this).scrollTop() > 50);
+    });
 
-                    if (scrollPos >= top && scrollPos < bottom) {
-                        $('.nav-menu a').removeClass('active');
-                        $('.nav-menu a[href="#' + id + '"]').addClass('active');
-                    }
-                });
-
-                // default home
-                if ($(window).scrollTop() < 100) {
-                    $('.nav-menu a').removeClass('active');
-                    $('.nav-menu a[href="#home"]').addClass('active');
-                }
-            });
-
-            // ===== INITIAL ACTIVE =====
-            $('.nav-menu a[href="#home"]').addClass('active');
-
-        });
-
-
-        // ===== MOBILE NAVIGATION =====
-        $('.hamburger').click(function() {
-            $('.nav-menu').toggleClass('active');
-            $(this).toggleClass('active');
-        });
-
-        $('.nav-link').click(function() {
-            $('.nav-menu').removeClass('active');
-            $('.hamburger').removeClass('active');
-        });
-
-        // ===== GALLERY FUNCTIONALITY (OPTIMIZED) =====
-        const $items = $('.gallery-item');
-        const $btn = $('#loadMoreBtn');
-
-        let visible = 6;
-        const perLoad = 3;
-
-        $items.hide().slice(0, visible).show();
-
-        $btn.on('click', function() {
-
-            const next = visible + perLoad;
-
-            $items.slice(visible, next).fadeIn(400);
-
-            visible = next;
-
-            if (visible >= $items.length) {
-                $btn.fadeOut();
-            }
-
-            // Prevent hash from appearing in URL
-            $('.nav-link').click(function(e) {
-                e.preventDefault();
-
-                const target = $(this.getAttribute('href'));
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top - 100
-                    }, 800);
-                }
-
-                // Close mobile menu
-                $('.nav-menu').removeClass('active');
-                $('.hamburger').removeClass('active');
-            });
-
-            // Also handle hero buttons
-            $('.hero-buttons a').click(function(e) {
-                e.preventDefault();
-
-                const target = $(this.getAttribute('href'));
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top - 100
-                    }, 800);
-                }
-            });
-
-        });
-
-        // ===== SKETCH GALLERY FUNCTIONALITY =====
-        const $sketchItems = $('.sketch-item');
-        const $sketchBtn = $('#loadMoreSketchBtn');
-
-        let sketchVisible = 3;
-        const sketchPerLoad = 3;
-
-        $sketchItems.hide().slice(0, sketchVisible).show();
-
-        $sketchBtn.on('click', function() {
-            const next = sketchVisible + sketchPerLoad;
-            $sketchItems.slice(sketchVisible, next).fadeIn(400);
-            sketchVisible = next;
-
-            if (sketchVisible >= $sketchItems.length) {
-                $sketchBtn.fadeOut();
-            }
-        });
-
-        // ===== SKETCH LIGHTBOX FUNCTIONALITY =====
-        let currentImageIndex = 0;
-        const sketchImages = $('.sketch-item img');
-
-        // Open lightbox
-        $('.sketch-item').click(function() {
-            currentImageIndex = $(this).index();
-            const imageSrc = $(this).find('img').attr('src');
-            $('#lightbox-image').attr('src', imageSrc);
-            $('#lightbox').fadeIn(300);
-        });
-
-        // Close lightbox
-        $('.lightbox-close, .lightbox').click(function(e) {
-            if (e.target === this) {
-                $('#lightbox').fadeOut(300);
-            }
-        });
-
-        // Previous image with slide effect
-        $('.lightbox-prev').click(function(e) {
-            e.stopPropagation();
-            $('#lightbox-image').css('transform', 'translateX(-100px)');
-            setTimeout(() => {
-                currentImageIndex = (currentImageIndex - 1 + sketchImages.length) % sketchImages.length;
-                const imageSrc = $(sketchImages[currentImageIndex]).attr('src');
-                $('#lightbox-image').attr('src', imageSrc).css('transform', 'translateX(0)');
-            }, 150);
-        });
-
-        // Next image with slide effect
-        $('.lightbox-next').click(function(e) {
-            e.stopPropagation();
-            $('#lightbox-image').css('transform', 'translateX(100px)');
-            setTimeout(() => {
-                currentImageIndex = (currentImageIndex + 1) % sketchImages.length;
-                const imageSrc = $(sketchImages[currentImageIndex]).attr('src');
-                $('#lightbox-image').attr('src', imageSrc).css('transform', 'translateX(0)');
-            }, 150);
-        });
-
-        // Keyboard navigation
-        $(document).keydown(function(e) {
-            if ($('#lightbox').is(':visible')) {
-                if (e.key === 'Escape') {
-                    $('#lightbox').fadeOut(300);
-                } else if (e.key === 'ArrowLeft') {
-                    $('.lightbox-prev').click();
-                } else if (e.key === 'ArrowRight') {
-                    $('.lightbox-next').click();
-                }
-            }
-        });
-
-        // ===== RESUME DOWNLOAD BUTTON =====
-        $('.resumeBtn').on('click', function(e) {
+    $('.nl, .footer-links a').on('click', function (e) {
+        var href = $(this).attr('href');
+        if (href && href.startsWith('#')) {
             e.preventDefault();
-            const link = document.createElement('a');
-            link.href = 'Sukanta_Byabortta_Resume.pdf';
-            link.download = 'Sukanta_Byabortta_Resume.pdf';
-            link.click();
+            var $t = $(href);
+            if ($t.length) {
+                $('html, body').animate({ scrollTop: $t.offset().top - offset }, 500);
+            }
+            $('#navLinks').removeClass('open');
+            $('#hamburger').removeClass('open');
+        }
+    });
+
+    $('.btn-primary, .btn-outline').on('click', function (e) {
+        var href = $(this).attr('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: $(href).offset().top - offset }, 500);
+        }
+    });
+
+    $(window).on('scroll', function () {
+        var sp = $(this).scrollTop() + offset + 10;
+        $('section[id]').each(function () {
+            var top = $(this).offset().top;
+            var bot = top + $(this).outerHeight();
+            if (sp >= top && sp < bot) {
+                $('.nl').removeClass('active');
+                $('.nl[href="#' + $(this).attr('id') + '"]').addClass('active');
+            }
         });
-    </script>
+    });
+
+    $('#hamburger').on('click', function () {
+        $(this).toggleClass('open');
+        $('#navLinks').toggleClass('open');
+    });
+
+    function animateBars() {
+        $('.sk-fill').each(function () {
+            if (!$(this).hasClass('done') && $(window).scrollTop() + $(window).height() > $(this).offset().top) {
+                var w = $(this).data('w') + '%';
+                $(this).addClass('done').css('width', 0).animate({ width: w }, 900);
+            }
+        });
+    }
+
+    function revealCards() {
+        $('.gallery-card, .srv-card, .skill-card, .ch-item, .stat-box').each(function () {
+            if ($(window).scrollTop() + $(window).height() > $(this).offset().top + 30) {
+                $(this).addClass('visible');
+            }
+        });
+    }
+
+    $(window).on('scroll', function () { animateBars(); revealCards(); });
+    animateBars(); revealCards();
+});
+</script>
 </body>
-
-
-
 </html>
