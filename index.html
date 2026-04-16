@@ -13,9 +13,8 @@
 
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
-        <a href="#home" class="nav-brand">
-            <span class="brand-box">SB</span>
-            <span class="brand-name">Sukanta</span>
+        <a href="/" class="nav-brand" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+            <img src="images/logo.svg" alt="Sukanta Byabortta" class="nav-logo-img">
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home" class="nl active">Home</a></li>
@@ -37,7 +36,7 @@
             <span class="hero-badge"><i class="fa-solid fa-circle-check"></i> Available for Freelance</span>
             <h1>Hi, I'm <span class="accent">Sukanta Byabortta</span></h1>
             <h2>Senior UI Developer <span class="divider">|</span> React.js Developer</h2>
-            <p>10+ years crafting pixel-perfect, responsive web interfaces. I build fast, clean, and scalable frontends — from pure HTML/CSS UI to modern React.js applications. Trusted by clients on Upwork and freelance platforms worldwide.</p>
+            <p>10+ years crafting pixel-perfect, responsive web interfaces. I build fast, clean, and scalable frontends — from pure HTML/CSS UI to modern React.js applications. Trusted by clients across the globe to deliver quality results on time.</p>
             <div class="hero-tags">
                 <span><i class="fa-brands fa-html5"></i> HTML5</span>
                 <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
@@ -432,13 +431,13 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-inner">
-            <div class="footer-brand">
+            <!-- <div class="footer-brand">
                 <span class="brand-box">SB</span>
                 <div>
                     <strong>Sukanta Byabortta</strong>
                     <span>Senior UI Developer &amp; React.js Developer</span>
                 </div>
-            </div>
+            </div> -->
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -455,7 +454,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
 $(function () {
-    var offset = 70;
+    var offset = 0;
 
     $(window).on('scroll', function () {
         $('#navbar').toggleClass('scrolled', $(this).scrollTop() > 50);
